@@ -1,0 +1,1 @@
+jackd -d alsa -C hw:PCH -r 44100 -n 3 -D -S

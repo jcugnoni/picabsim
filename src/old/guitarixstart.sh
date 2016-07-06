@@ -1,0 +1,3 @@
+~/jackstart.sh && guitarix -N
+
+

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Test GUI with Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="./bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+
+  </head>
+  <body>
+     <nav class="navbar navbar-inverse">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle nav</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">PiCabSim</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="setup.html">Setup</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+
+    <!-- Page content -->
+    <div class="container theme-showcase" role="main">
+    
+  
+    <!-- IR lists Left/Right -->
+    <div class="row">
+      <div class="col-sm-5"> <!-- column1 -->
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Left Impulse Response</h3>
+        </div>
+        <div class="panel-body">
+          <form method="post" name="IRDir1">
+          <select size="1" name="DirList1">
+            <option value="0">..</option>
+            <option value="1">IR/</option>
+            <option value="2">&nbsp;&nbsp;Old Ones</option>
+            <option value="3">Impulses/</option>
+            <option value="4">&nbsp;&nbsp;Guitar Hack</option>
+          </select>
+          <button name="SetDir1" value="1">Set Dir</button>
+          <br>
+          </form> 
+          <form method="post" action="IR1" name="FormIR1">
+          <select size="8" name="IRList">
+            <option value="0">s-preshigh.wav</option>
+            <option value="1">orange_2_mics.wav</option>
+            <option value="2">LetItBurnOrange-oncut.wav</option>
+          </select>
+          <div class="form-horizontal">
+            <div class="form-group col-sm-4">
+              <label for="predelay1">Delay</label>
+              <input class="form-control" id="predelay1">
+            </div>
+            <div class="form-group col-sm-4">
+              <label for="gain1">Gain</label>
+              <input class="form-control" id="gain1">
+            </div>
+          </div>
+          <br>
+          <button name="SetIR1" value="1" class="btn btn-primary">Set IR</button>
+          <br>
+          </form>
+        </div>
+      </div>
+      </div> <!-- column1 -->
+
+      <div class="col-sm-5"> <!-- column2 -->
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Right Impulse Response</h3>
+        </div>
+        <div class="panel-body">
+          <form method="post" action="IRDir2" name="IRDir2">
+          <select size="1" name="DirList2">
+            <option value="0">..</option>
+            <option value="1">IR/</option>
+            <option value="2">&nbsp;&nbsp;Old Ones</option>
+            <option value="3">Impulses/</option>
+            <option value="4">&nbsp;&nbsp;Guitar Hack</option>
+          </select>
+          <button name="SetDir2" value="1">Set Dir</button>
+          <br>
+          </form> 
+          <form method="post" action="IR2" name="FormIR2">
+          <select size="8" name="IRList2">
+            <option value="0">s-preshigh.wav</option>
+            <option value="1">orange_2_mics.wav</option>
+            <option value="2">LetItBurnOrange-oncut.wav</option>
+          </select>
+          <div class="form-horizontal">
+            <div class="form-group col-sm-4">
+              <label for="predelay2">Delay</label>
+              <input class="form-control" id="predelay2">
+            </div>
+            <div class="form-group col-sm-4">
+              <label for="gain2">Gain</label>
+              <input class="form-control" id="gain2">
+            </div>
+          </div>
+          <br>
+          <button name="SetIR2" value="1" class="btn btn-primary">Set IR</button>
+          <br>
+          </form>
+         </div>
+        </div>
+      </div> <!-- column2 -->
+    </div> <!-- IR lists -->
+    <!-- Stereo Mono selection -->
+    <form method="post" action="MonoStereo" name="MonoStereo">
+    <div class="row">
+        <div class="col-sm-2"><label for="btnGrpMS">Input type</label></div>
+        <div class="col-sm-5">
+            <div class="btn-group" data-toggle="buttons" name="btnGrpMS">
+                <label class="btn btn-default active">
+                    <input type="radio" id="1" name="monostereo" value="1" checked="checked"/> Mono (L)
+                </label> 
+                <label class="btn btn-default">
+                    <input type="radio" id="2" name="monostereo" value="2" /> Stereo (L+R)
+                </label> 
+            </div>
+        </div>
+        <button name="restart" value="1" class="col-sm-2 btn btn-primary">Restart</button>
+    </div>
+    </form>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="./jquery/jquery.min.js"><\/script>')</script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <!-- <script src="../../assets/js/docs.min.js"></script> -->
+</body>
+</html>
+
